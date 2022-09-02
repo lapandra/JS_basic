@@ -1,0 +1,191 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8">
+      <title>Homework</title>
+   </head>
+   <body>
+
+
+1. Дан код:
+var a = 1, b = 1, c, d; <br>
+c = ++a; alert(c);           // 2 - префиксный оператор ++ :сначала к a прибавляется единица, затем вычисляется значение c <br>
+d = b++; alert(d);           // 1 - постфиксный оператор ++ :сначала вычисляется значение d, затем к b прибавляется единица и записывается (b=2) <br>
+c = (2+ ++a); alert(c);      // 5 - префиксный оператор ++ : к 2 прибавляем а, увеличенную на единицу, а = 2 с прошлого цикла, итого а = 3 <br>
+d = (2+ b++); alert(d);      // 4 - постфиксный оператор ++: сначала к 2 прибавляется b (с прошлого цикла b=2), затем b увеличивается на единицу b и записывается (b=3) <br>
+alert(a);                    // 3 - a с предыдущего цикла равно 3 <br>
+alert(b);                    // 3 - b с предыдущего цикла равно 3 <br>
+Почему код даёт именно такие результаты? <br>
+<br>
+<br>
+2. Чему будет равен x в примере ниже?<br>
+var a = 2; <br>
+var x = 1 + (a *= 2); результат: 5 (присваивание с умножением - a умножится на 2, затем прибавится 1) <br> 
+<br>
+<br>
+<br>
+3. Объявить две целочисленные переменные a и b и задать им произвольные начальные значения. <br>
+Затем написать скрипт, который работает по следующему принципу:<br>
+если a и b положительные, вывести их разность; <br>
+если а и b отрицательные, вывести их произведение; <br>
+если а и b разных знаков, вывести их сумму; <br>
+ноль можно считать положительным числом. <br>
+
+ <script>
+"use strict";
+let a = +prompt('Введите число a');
+let b = +prompt('Введите число b');
+a >= 0 && b>= 0
+? console.log(a - b)
+: a < 0 && b < 0
+? console.log(a * b)
+: console.log(a + b)
+
+ </script>
+<br>
+<br>
+<br>
+
+
+4. Присвоить переменной а значение в промежутке [0..15].<br>
+С помощью оператора switch организовать вывод чисел от a до 15.<br>
+
+ <script>
+"use strict";
+
+let c = +prompt('Введите число от 1 до 15');
+switch(c) {
+
+case 1 :
+console.log(1);
+case 2 :
+console.log(2);
+case 3 :
+console.log(3);
+case 4 :
+console.log(4);
+case 5 :
+console.log(5);
+case 6 :
+console.log(6);
+case 7 :
+console.log(7);
+case 8 :
+console.log(8);
+case 9 :
+console.log(9);
+case 10 :
+console.log(10);
+case 11 :
+console.log(11);
+case 12 :
+console.log(12);
+case 13 :
+console.log(13);
+case 14 :
+console.log(14);
+case 15 :
+console.log(15);
+}
+</script>
+<br>
+<br>
+<br>
+5. Реализовать основные 4 арифметические операции в виде функций с двумя параметрами. Обязательно использовать оператор return.
+
+<script>
+   "use strict";
+  
+    let d = +prompt("Введите число d");
+    let e = +prompt("Введите число e");
+
+    /*сложение*/
+    function sum(d,e) {
+      return d + e;
+    }
+   
+    /*разность*/
+   function difference(d, e) {
+      if (d >= e) { return  (d - e);
+    } else { return  (e - d);
+      }
+   }
+ 
+    /*умножение*/
+
+    function multiplication(d,e) {
+      return d * e;
+    }
+   
+      
+    /*деление*/
+    function division(d,e) {
+      return d / e;
+    }
+     </script>
+<br>
+<br>
+<br>  
+
+6. Реализовать функцию с тремя параметрами: function mathOperation(arg1, arg2, operation), где arg1, arg2 – значения аргументов, <br>
+operation – строка с названием операции. В зависимости от переданного значения операции выполнить одну из арифметических операций <br>
+(использовать функции из пункта 5) и вернуть полученное значение (использовать switch).<br>
+
+<script>
+   "use strict";
+
+function mathOperation(arg1, arg2, operation) {
+  switch (operation) {
+     case '+' :  return sum(arg1,arg2);
+     case '-' :  return difference(arg1,arg2);
+     case '*' :  return multiplication(arg1,arg2);
+     case '/' :  return division(arg1,arg2);
+    default: return NaN; 
+   }
+   }
+  console.log(mathOperation(d,e,'+'));
+  console.log(mathOperation(d,e,'-'));
+  console.log(mathOperation(d,e,'*'));
+  console.log(mathOperation(d,e,'/'));
+  
+</script>
+<br>
+<br>
+<br> 
+7. *Сравнить null и 0. Попробуйте объяснить результат.<br>
+Исследуя эту тему, прочитала про абстрактный алгоритм сравнения - <br>
+через него прогоняются значения и выводится результат, <br>
+из-за его особенностей и получается так интересно на выходе :) <br>
+<br>
+<br>
+<br>
+<script>
+ "use strict";
+ console.log(null > 0);
+ console.log(null < 0);
+ console.log(null == 0);
+ console.log(null!== 0);
+ console.log(typeof null);
+ console.log(typeof 0);
+
+</script>
+8. *С помощью рекурсии организовать функцию возведения числа в степень.<br>
+ Формат: function power(val, pow), где val – заданное число, pow – степень.<br>
+ <script>
+ "use strict";
+
+ let val = +prompt('Введите чиссло');
+ let pow = +prompt('В какую степерь будем возводить');
+ function power(val, pow) {
+   if (pow !== 1) {
+   return val * power(val, pow-1);  
+  } else {   
+   return val;
+   }
+  }
+
+ console.log(power(val, pow));
+
+ </script>
+   </body>
+</html>
