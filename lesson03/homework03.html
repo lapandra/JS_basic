@@ -1,0 +1,104 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8">
+      <title>Homework</title>
+   </head>
+   <body>
+
+    1. С помощью цикла while вывести все простые числа в промежутке от 0 до 100. <br>
+    <br>
+<script>
+"use strict";
+let i = 0;
+while (i < 100) {
+  let n = 1;
+  i++;
+  while (n < i) {
+    n++;
+  if (i == 2) {
+    console.log(i);
+   }
+   if (i % n == 0) {
+    break;
+   }
+   if (i % 3 == 0 && i !== 3) {
+    break;
+   }
+   if (i % 5 == 0 && i !== 5) {
+    break;
+   }
+   if (i % 7 == 0 && i !== 7) {
+    break;
+   }
+   console.log(i);
+    }
+
+}
+</script>
+<br>
+<br>
+<br>
+2. С этого урока начинаем работать с функционалом интернет-магазина. Предположим, <br>
+есть сущность корзины. Нужно реализовать функционал подсчета стоимости корзины в зависимости <br>
+от находящихся в ней товаров. Товары в корзине хранятся в массиве. Задачи:<br>
+a) Организовать такой массив для хранения товаров в корзине;<br>
+b) Организовать функцию countBasketPrice, которая будет считать стоимость корзины.<br>
+
+<script>
+  "use strict";
+  const Basket = [
+['футболка',2,3000],
+['шорты',5,27000],
+['купальник',4,20000],
+['шуба',1,100000],
+['кроссовки',3,15500],
+['шляпа',8,34500]
+  ];
+
+  
+function countBasketPrice(arr) {
+  let fullprice = 0;
+  for(let i = 0;i<arr.length;i++) {
+  fullprice += arr[i][2]
+  }
+ console.log(fullprice);
+ }
+ countBasketPrice(Basket); 
+
+  </script>
+<br>
+<br>
+<br>
+3.*Вывести с помощью цикла for числа от 0 до 9, не используя тело цикла. <br>
+ Выглядеть это должно так:<br>
+
+for(…){// здесь пусто}<br>
+
+<script>
+"use strict";
+for(let i = 0;i<10;console.log(i), i++){}
+
+</script>
+<br>
+<br>
+<br>
+4. *Нарисовать пирамиду с помощью console.log, как показано на рисунке,<br>
+ только у вашей пирамиды должно быть 20 рядов, а не 5:<br>
+ <br>
+x<br>
+xx<br>
+xxx<br>
+xxxx<br>
+xxxxx<br>
+
+<script>
+  "use strict";
+ 
+for(let c = 1; c <= 20; c++){
+console.log('x'.repeat(c));
+}
+  </script>
+
+   </body>
+</html>
