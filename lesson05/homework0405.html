@@ -1,0 +1,92 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8">
+      <title>Homework</title>
+   </head>
+   <body>
+Итак, по предыдущей домашке:
+2.Продолжить работу с интернет-магазином:<br>
+2.1. В прошлом домашнем задании вы реализовали корзину на базе массивов. Какими объектами можно заменить их элементы?<br>
+2.2. Реализуйте такие объекты.<br>
+2.3. Перенести функционал подсчета корзины на объектно-ориентированную базу.<br>
+
+<script>
+  "use strict";
+  const products = [
+    {name: 'футболка', 
+    quantity : 2, 
+    count : 3000,}, 
+    {name: 'шорты', 
+    quantity : 5, 
+    count : 27000,}, 
+    {name: 'купальник', 
+    quantity : 4, 
+    count : 20000,}, 
+    {name: 'шуба', 
+    quantity : 1, 
+    count : 100000,}, 
+    {name: 'кроссовки', 
+    quantity : 3, 
+    count : 15500,}, 
+    {name: 'шляпа', 
+    quantity : 8, 
+    count : 34500,}, 
+    {name: 'галстук', 
+    quantity : 4, 
+    count : 22000,}, 
+    ];
+  
+
+function countBasketPrice(arr) {
+  let fullprice = 0;
+  for(let i = 0;i<arr.length;i++) {
+ fullprice += arr[i].count;
+   }
+ console.log(fullprice);
+ }
+ countBasketPrice(products); 
+  </script>
+
+ 
+<div id = "test">Шахматная доска</div>
+
+<script>
+
+function chessboard() {
+document.write("<table width='150' height='150'>");
+    for(let i = 0; i <= 8; i++) {
+    document.write("<tr>"); 
+      for(let m = 0; m < 8; m++) {
+
+    if ((m + i)%2==0) {
+      document.write("<td bgcolor='black'></td>");
+        } else {
+      document.write("<td bgcolor='white'></td>");
+    }
+    }
+    document.write("</tr>"); 
+  }
+  document.createElement('p');
+}
+  
+   chessboard();
+
+
+
+
+
+
+
+  </script>
+
+
+
+
+
+
+
+
+
+   </body>
+</html>
